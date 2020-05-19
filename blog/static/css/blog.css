@@ -1,7 +1,6 @@
 .page-header {
     background-color: #505050;
     margin-top: 0;
-    /* padding: 20px 20px 20px 40px; */
     padding-top: 20px;
     padding-right: 20px;
     padding-bottom: 0px;
@@ -18,7 +17,6 @@
 .content {
     margin-left: 40px;
     background-color:#f5f3ed;
-
 }
 
 
@@ -49,7 +47,7 @@ h1, h2, h3, h4 {
 .post {
     /* margin-bottom: 25px; */
     /* background-color:#f5f3ed; */
-    font-size:11pt
+    font-size:11pt;
 }
 
 .post h2 a, .post h2 a:visited {
@@ -81,7 +79,7 @@ h1, h2, h3, h4 {
 }
 
 div.home{
-  background: url("../img/sky.jpg") ;
+  background: url("../img/sky.jpg");
   background-size: cover;
   height: 100%;
   top:20px;
@@ -98,7 +96,7 @@ div.home{
     margin-right: -50%;
     font-size: 50pt;
     color: white;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
   }
 
   .home p.intro{
