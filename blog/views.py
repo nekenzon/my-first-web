@@ -4,8 +4,41 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
+
+def login_user(request):
+    print("?????")
+    logout(request)
+    username = password = ''
+    if request.POST:
+        username = request.POST['username']
+        password = request.POST['password']
+        print(username)
+        print(password)
+        user = authenticate(username=username, password=password)
+        print(user)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('index')
+    return render(request, 'blog/index.html')
+
+def post_register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('post_list')
+    else:
+        form = UserCreationForm()
+    return render(request, 'blog/post_register.html', {'form': form})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -15,6 +48,8 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+
 
 @login_required
 def post_new(request):
@@ -86,3 +121,20 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+def index(req):
+    return render(req, 'blog/index.html')
+
+# Nav bar
+def index(request):
+    context = {"index_page": "active"} # new info here
+    return render(request, 'blog/index.html', context)
+
+def album(request):
+    print("???")
+    context = {"album_page": "active"} # new info here
+    return render(request, 'blog/album.html', context)
+
+def about(request):
+    context = {"about_page": "active"} # new info here
+    return render(request, 'blog/about.html', context)

@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="home">
+  {% if user.is_authenticated %}
+  <div class="containerIntro">
+    <p class = "intro"> You have logged in!
+    <br>
+    You can now upload your posts!</p>
+  </div>
+  {% else %}
+  <p class = "home"> Welcome to Qihong's blog!</p>
+
+ <div class="container2">
+    <h1>LOGIN</h1>
+     <form method="post" action="{% url 'login_user' %}">
+       {% csrf_token %}
+         <label>Username</label><br>
+         <input type="text" name="username"><br>
+         <label>Password</label><br>
+         <input type="password" name="password"><br>
+         <button type="submit">Log in</button>
+     </form>
+ </div>
+
+ <div class="container2" style="transform: translate(225%,-50%);">
+    <h1>Dones't have an account?</h1>
+     <form>
+
+         <button>Register</button>
+     </form>
+ </div>
+ {% endif %}
+</div>
+
+{% endblock content %}

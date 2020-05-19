@@ -1,7 +1,11 @@
 from django.urls import path
 from . import views
+from django.urls import re_path
+from django.conf.urls import url, include
+
 
 urlpatterns = [
+    re_path(r'^$', views.index, name='index'),
     path('', views.post_list, name='post_list'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post/new/', views.post_new, name='post_new'),
@@ -12,4 +16,11 @@ urlpatterns = [
     path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
     path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
     path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
+    path('index', views.index, name='index'),
+    path('post_list', views.post_list, name='post_list'),
+    path('album', views.album, name='album'),
+    path('about', views.about, name='about'),
+    path('login_user',views.login_user,name='login_user'),
+    path('post_register', views.post_register, name='post_register'),
+
 ]
