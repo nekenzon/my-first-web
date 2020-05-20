@@ -1,26 +1,49 @@
 {% extends 'blog/base.html' %}
 
 
-
 {% block content %}
     {% for post in posts %}
-    <div class="content container" style="margin-top: 20px">
-        <div class="row">
-            <div class="col-md-8">
+    <!-- Grid -->
+<div class="w3-row w3-padding w3-border">
 
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}" style="color:#505050">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+  <!-- Blog entries -->
+  <div class="w3-col l8 s12">
+    <!-- Blog entry -->
+   <div class="w3-container w3-white w3-margin w3-padding-large post">
+     <div class="w3-center">
+       <h3 style="color:#6699ff"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+       <h5><span class="w3-opacity">{{ post.published_date }}</span></h5>
+     </div>
 
-            <hr style="border: 0.7px solid grey;">
-        </div>
-      </div>
-      </div>
-      </div>
+     <div class="w3-justify">
+       <!-- <img src="../../static/img/sky.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16"> -->
+       <p style="font-size:12pt">{{post.text|truncatewords:50}}</p>
+       <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+       <p class="w3-right"><button class="w3-button w3-grey" onclick='myFunction("{{ post.published_date }}")' id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">{{post.comments.count}}</span></button></p>
+       <p class="w3-clear"></p>
+       <div class="w3-row w3-margin-bottom "  id="{{post.published_date}}" style="display:none">
+         <hr>
+         {% if post.comments.count == 0 %}
+            <p class="w3-center " style="color:white;background-color:grey;"> No comments yet<p>
+         {% else %}
+            <p class="w3-center " style="color:white;background-color:grey;"> Most recent two comments<p>
+         {% endif %}
+         <!-- On the post list page, only shows 2 recent comemmts -->
+         {% for comment in post.comments.all|dictsortreversed:"created_date"|slice:":2" %}
+           <div class="w3-col l2 m3">
+             <img src="../../static/img/sky.jpg" style="width:90px;">
+           </div>
+           <div class="w3-col l10 m9">
+             <h4>{{ comment.author }}    <span class="w3-opacity w3-medium">{{ comment.created_date }}</span></h4>
+             <p>{{ comment.text|linebreaks }}</p>
+           </div>
+          {% endfor %}
+
+       </div>
+     </div>
+   </div>
+   </div>
+   </div>
 
     {% endfor %}
 {% endblock content %}
