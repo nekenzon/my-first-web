@@ -82,7 +82,7 @@ h1, h2, h3, h4 {
 
 div.home{
   background: url("../img/sky.jpg") ;
-  background-size: cover;
+  background-size: 100% 100%;
   height: 100%;
   weight:100%
   top:20px;
@@ -137,7 +137,6 @@ div.home{
      color: white;
      margin-bottom: 25px;
      border-bottom: 4px solid pink;
-
  }
 
  .container2 form input{
@@ -191,6 +190,7 @@ div.home{
      color: #fff;
      font-size: 20px;
  }
+
 .container3 label{
      text-align: left;
      color: pink;
