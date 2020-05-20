@@ -25,8 +25,9 @@
 
  <div class="container3">
     <h1>Dones't have an account?</h1>
-     <form>
-         <button>Register</button>
+     <form method="post" action="{% url 'post_register' %}">
+       {% csrf_token %}
+         <button type="submit" >Register</button>
      </form>
  </div>
  {% endif %}
