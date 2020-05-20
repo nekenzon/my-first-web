@@ -163,8 +163,7 @@ div.home{
      color: white;
  }
 
-
- .container3{
+.container3{
      position: absolute;
      right: 15%;
      top: 50%;
@@ -174,7 +173,7 @@ div.home{
      background-color: rgba(0,0,0,.4);
      margin-top: 40px;
  }
- .container3 h1{
+.container3 h1{
      text-align: left;
      color: white;
      margin-bottom: 25px;
@@ -182,7 +181,7 @@ div.home{
 
  }
 
- .container3 form input{
+.container3 form input{
      width: calc(100% - 20px);
      padding: 8px 10px;
      margin-bottom: 15px;
@@ -192,12 +191,12 @@ div.home{
      color: #fff;
      font-size: 20px;
  }
- .container3 label{
+.container3 label{
      text-align: left;
      color: pink;
  }
 
- .container3 form button{
+.container3 form button{
      width: 100%;
      padding: 6px 0px;
      background-color:pink;
