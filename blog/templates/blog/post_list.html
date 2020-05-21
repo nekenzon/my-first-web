@@ -16,6 +16,7 @@
      </div>
 
      <div class="w3-justify">
+       <img src="{{ post.images.first.url}}" style="width: 100%;" class="w3-padding-16">
        <!-- <img src="../../static/img/sky.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16"> -->
        <p style="font-size:12pt">{{post.text|truncatewords:50}}</p>
        <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>

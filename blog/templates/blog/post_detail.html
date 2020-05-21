@@ -4,7 +4,7 @@
 
 <div class="w3-row w3-padding w3-border">
     <div class="w3-col l8 s12">
-        <div class="w3-container w3-white w3-margin w3-padding-large post">
+        <div class="w3-container w3-white w3-margin w3-padding-large post" >
           <div class="w3-right">
             {% if user.is_authenticated %}
             <a class="btn btn-info" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -21,8 +21,10 @@
               {% endif %}
             </div>
             <hr>
-              <h2 style="color:#6699ff" class="w3-center">{{ post.title }}</h2>
-
+            <h2 style="color:#6699ff" class="w3-center">{{ post.title }}</h2>
+            {% for image in post.images.all %}
+              <img src="{{ image.url}}" style="width: 50%;" class="w3-padding-16">
+            {% endfor%}
             <p>{{ post.text|linebreaksbr }}</p>
             <hr>
             <p class="w3-center " style="color:white;background-color:grey;"> All comments<p>

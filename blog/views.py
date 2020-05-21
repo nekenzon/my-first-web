@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Image
 from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
@@ -11,12 +11,15 @@ from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 
-def simple_upload(request):
+def simple_upload(request, pk):
+    post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
+        image = Image(post = post, url = uploaded_file_url)
+        image.save()
         return render(request, 'blog/simple_upload.html', {
             'uploaded_file_url': uploaded_file_url
         })
