@@ -3,7 +3,9 @@
 {% block content %}
 <br>
 <div class="content container">
+  {%if form.instance.pk  %}
   <a href="{% url 'simple_upload2' pk=form.instance.pk %}" class="top-menu"><span class="glyphicon glyphicon-upload w3-black"></span></a>
+  {%endif%}
     <div class="row">
         <div class="col-md-8">
           <div class="w3-card-4">
@@ -22,6 +24,11 @@
                 <textarea rows="4" cols="50" name="text" class="w3-input w3-border w3-sand">{{ form.instance.text }}</textarea><br>
                 <br>
                 <button type="submit" class="btn btn-success w3-right">Save</button>
+                <br>
+
+
+
+                <p><a href="{% url 'index' %}">Return to home</a></p>
               </form>
               <br>
             </div>
