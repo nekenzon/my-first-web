@@ -1,15 +1,30 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<br>
 <div class="content container">
     <div class="row">
         <div class="col-md-8">
-    <h2>New post</h2>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
-    </div>
-    </div>
+          <div class="w3-card-4">
+            <div class="w3-container w3-grey">
+              <h2 style="color:white;">New post</h2>
+            </div>
+            <br>
+            <form method="POST" class="w3-container">
+              {% csrf_token %}
+              <!-- csrf_token will make the form secure -->
+              <!-- Display the form -->
+              <!-- Only will display title and text now due to the forms.py -->
+                <label class="w3-text-brown">Title</label><br>
+                <input class="w3-input w3-border w3-sand" type="text" name="title" value = "{{ form.instance.title }}"><br>
+                <label class="w3-text-brown">Text</label><br>
+                <textarea rows="4" cols="50" name="text" class="w3-input w3-border w3-sand">{{ form.instance.text }}</textarea><br>
+                <br>
+                <button type="submit" class="btn btn-success w3-right">Save</button>
+              </form>
+              <br>
+            </div>
+          </div>
+        </div>
     </div>
 {% endblock %}

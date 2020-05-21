@@ -22,5 +22,6 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('login_user',views.login_user,name='login_user'),
     path('post_register', views.post_register, name='post_register'),
+    path('simple_upload',views.simple_upload,name='simple_upload'),
 
 ]
