@@ -1,5 +1,141 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<p>About</p>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 40%;
+  margin-bottom: 20px;
+  padding: 0 16px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="about-section">
+  <h1>About Me Page</h1>
+  <p>This page is about me and you will know about what I am.</p>
+  <p>Contact details or further cooperation please scroll down.</p>
+</div>
+
+
+
+<h2 style="text-align:center">My Page</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="../../static/img/qihongliang.jpg" alt="QIHONG LIANG" style="width:100%">
+      <div class="container">
+        <h2>QIHONG LIANG</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>nekenzon@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="header"></div>
+  <div class="left"></div>
+  <div class="stuff">
+    <br><br>
+    <h1>CV</h1>
+    <h2>QIHONG LIANG</h2>
+    <hr />
+    <br>
+    <p class="head">Interests</p>
+    <ul>
+      <li>Drawing</li>
+      <li>Photography</li>
+      <li>Design</li>
+      <li>Programming</li>
+      <li>Computer Science</li>
+    </ul>
+    <p class="head">Skills</p>
+    <ul>
+      <li>Web Design with HTML & CSS</li>
+    </ul>
+    <p class="head">Education</p>
+    <ul>
+      <a href="http://www.wiltonhighschool.org/pages/Wilton_High_School">
+        <li>University of Birmingham</li>
+      </a>
+      <!--Link-->
+      <a href="https://www.silvermineart.org/">
+        <li>Silvermine School of Arts</li>
+      </a>
+      <li>Codeacademy</li>
+    </ul>
+    <p class="head">Experience</p>
+    <ul>
+      <li>Student Technology Intern for Wilton School District</li>
+      <li>Babysitter</li>
+    </ul>
+    <p class="head">Extracurriculars</p>
+    <ul>
+      <li>Recycling Club</li>
+      <li>Gardening Club</li>
+      <li>Book Club</li>
+    </ul>
+  </div>
+  <div class="right"></div>
+  <div id="footer">
+  
+
+
+</body>
 {% endblock content %}
