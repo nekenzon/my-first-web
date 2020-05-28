@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
+from django.db.models import Q
 from .models import Post, Comment, Image
 from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
@@ -10,6 +11,31 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
+
+def searchposts(request):
+    if request.method == 'GET':
+        query= request.GET.get('q')
+
+        submitbutton= request.GET.get('submit')
+
+        if query is not None:
+            lookups= Q(title__icontains=query) | Q(text__icontains=query)
+
+            results= Post.objects.filter(lookups).distinct()
+
+            context={'results': results,
+                     'submitbutton': submitbutton}
+
+            return render(request, 'blog/post_search.html', context)
+
+        else:
+            return render(request, 'blog/post_search.html')
+
+    else:
+        return render(request, 'blog/post_search.html')
+
+
+
 
 def simple_upload(request, pk):
     post = get_object_or_404(Post, pk=pk)

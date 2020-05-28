@@ -24,5 +24,6 @@ urlpatterns = [
     path('post_register', views.post_register, name='post_register'),
     path('simple_upload',views.simple_upload,name='simple_upload'),
     path('post/<int:pk>/edit/simple_upload/', views.simple_upload,name='simple_upload2'),
+    path('post_search',views.searchposts,name='post_search'),
 
 ]
