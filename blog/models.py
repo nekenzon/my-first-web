@@ -37,3 +37,22 @@ class Comment(models.Model):
 class Image(models.Model):
     post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name = "images")
     url = models.CharField(max_length=200)
+
+
+class AlbumPic(models.Model):
+    url = models.CharField(max_length=200)
+
+
+
+
+
+class Graduation(models.Model):
+    start_time = models.DateTimeField(verbose_name="start_time")
+    school = models.CharField(verbose_name="school", max_length=100)
+    professional = models.CharField(verbose_name="professional", max_length=100)
+
+
+class Experience(models.Model):
+    start_time = models.DateTimeField(verbose_name="start_time")
+    company = models.CharField(verbose_name="Company and work position", max_length=100)
+    work_content = models.CharField(verbose_name="work_content", max_length=100)

@@ -1,0 +1,59 @@
+1594838380975	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8x/td8pgcvx7tzflf7zm5cy748c0000gn/T/rust_mozprofileZ73AoS"
+1594838383505	Marionette	INFO	Listening on port 64149
+1594838383551	Marionette	WARN	TLS certificate errors will be ignored for this session
+1594838383653	Marionette	INFO	Stopped listening on port 64149
+1594838430620	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8x/td8pgcvx7tzflf7zm5cy748c0000gn/T/rust_mozprofilee4QFfZ"
+1594838432481	Marionette	INFO	Listening on port 64211
+1594838432567	Marionette	WARN	TLS certificate errors will be ignored for this session
+1594838432680	Marionette	INFO	Stopped listening on port 64211
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1594838480877	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8x/td8pgcvx7tzflf7zm5cy748c0000gn/T/rust_mozprofileENa0px"
+1594838482771	Marionette	INFO	Listening on port 64264
+1594838482825	Marionette	WARN	TLS certificate errors will be ignored for this session
+1594838482919	Marionette	INFO	Stopped listening on port 64264
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1594838504300	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8x/td8pgcvx7tzflf7zm5cy748c0000gn/T/rust_mozprofilebMeAAg"
+1594838506473	Marionette	INFO	Listening on port 64317
+1594838506539	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/, line 85: TypeError: document.getElementById(...) is null
+1594838507288	Marionette	INFO	Stopped listening on port 64317
+1594838588191	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8x/td8pgcvx7tzflf7zm5cy748c0000gn/T/rust_mozprofileYA5MW6"
+1594838590058	Marionette	INFO	Listening on port 64401
+1594838590134	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/, line 85: TypeError: document.getElementById(...) is null
+1594838590776	Marionette	INFO	Stopped listening on port 64401
+1594838618586	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8x/td8pgcvx7tzflf7zm5cy748c0000gn/T/rust_mozprofile7t0VOk"
+1594838620536	Marionette	INFO	Listening on port 64472
+1594838620644	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/cv, line 147: TypeError: document.getElementById(...) is null
+1594838621256	Marionette	INFO	Stopped listening on port 64472

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from django.db.models import Q
-from .models import Post, Comment, Image
+from .models import Post, Comment, Image, Graduation, Experience, AlbumPic
 from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
@@ -50,6 +50,21 @@ def simple_upload(request, pk):
             'uploaded_file_url': uploaded_file_url
         })
     return render(request, 'blog/simple_upload.html')
+
+def simple_upload2(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        albumIma = AlbumPic(url = uploaded_file_url)
+        albumIma.save()
+        pics = AlbumPic.objects.all()
+        return render(request, 'blog/album.html',{'pic_images':pics})
+
+    return render(request, 'blog/simple_upload.html')
+
+
 
 def login_user(request):
     print("?????")
@@ -172,11 +187,27 @@ def index(request):
     context = {"index_page": "active"} # new info here
     return render(request, 'blog/index.html', context)
 
+def dele(request, pk):
+    pics=get_object_or_404(AlbumPic, pk=pk)
+    pics.delete()
+
+    return redirect('album')
+
+
 def album(request):
-    print("???")
-    context = {"album_page": "active"} # new info here
-    return render(request, 'blog/album.html', context)
+    if request.method == 'GET':
+
+        pics = AlbumPic.objects.all()
+        return render(request, 'blog/album.html',
+                 {'pic_images':pics}
+                    )
 
 def about(request):
     context = {"about_page": "active"} # new info here
     return render(request, 'blog/about.html', context)
+
+def cv(request):
+    graduation_list = Graduation.objects.all()
+    experience_list = Experience.objects.all()
+    context = {"graduation_list": graduation_list, "experience_list": experience_list}
+    return render(request, 'blog/cv.html', context)

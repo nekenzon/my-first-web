@@ -18,12 +18,13 @@ urlpatterns = [
     path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
     path('index', views.index, name='index'),
     path('post_list', views.post_list, name='post_list'),
-    path('album', views.album, name='album'),
+    path('pics', views.album, name='album'),
     path('about', views.about, name='about'),
     path('login_user',views.login_user,name='login_user'),
     path('post_register', views.post_register, name='post_register'),
-    path('simple_upload',views.simple_upload,name='simple_upload'),
+    path('simple_upload',views.simple_upload2,name='simple_upload'),
     path('post/<int:pk>/edit/simple_upload/', views.simple_upload,name='simple_upload2'),
     path('post_search',views.searchposts,name='post_search'),
-
+    path('pics/<int:pk>/dele',views.dele,name='dele'),
+    path('cv', views.cv, name='cv'),
 ]

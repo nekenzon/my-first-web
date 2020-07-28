@@ -3,183 +3,94 @@
 {% block content %}
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.button{
+  padding : 10px;
+  text-align:center;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial;
-}
-
-/* The grid: Four equal columns that floats next to each other */
-.column {
+.responsive {
+  padding: 0 6px;
   float: left;
-  width: 25%;
-  padding: 10px;
+  width: 24.99999%;
 }
 
-/* Style the images inside the grid */
-.column img {
-  opacity: 0.8;
-  cursor: pointer;
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
 }
 
-.column img:hover {
-  opacity: 1;
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
 }
 
-/* Clear floats after the columns */
-.row:after {
+.clearfix:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* The expanding image container */
-.container {
-  position: relative;
-  display: none;
-}
 
-/* Expanding image text */
-.imgtext {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: white;
-  font-size: 20px;
-}
-
-/* Closable button inside the expanded image */
-.closebtn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
-}
 </style>
 </head>
 <body>
 
-<div style="text-align:center">
-  <h2> Image Gallery</h2>
-  <p>Welcome to My Image Gallery Feel Free to have a look:</p>
-</div>
+<h2>Welcome to Albumn Page </h2>
+<h4>DIY Albumn !!! Feel Free to Uploaded your own Image(Click the UploadedImage Link).</h4>
 
-<!-- The four columns -->
-<div class="row">
-  <div class="column">
-    <img src="../../static/img/img_nature.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/img_snow.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/img_mountains.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/img_lights.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/IMG_3982.jpg" alt="cat1" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/IMG_4145.jpg" alt="view1" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/IMG_5151.jpg" alt="view3" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/sky.jpg" alt="view4" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view.jpg" alt="view5" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view2.jpg" alt="view6" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view3.jpg" alt="view7" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view4.jpg" alt="view8" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view5.jpg" alt="view9" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view6.jpg" alt="view10" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view7.jpg" alt="view11" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view8.jpg" alt="view12" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view9.jpg" alt="view13" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view10.jpg" alt="view14" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view12.jpg" alt="view16" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view13.jpg" alt="view17" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view14.jpg" alt="view18" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view15.jpg" alt="view19" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view16.jpg" alt="view20" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view17.jpg" alt="view21" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view18.jpg" alt="view22" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view19.jpg" alt="view23" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view20.jpg" alt="view24" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view21.jpg" alt="view25" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../../static/img/view22.jpg" alt="view26" style="width:100%" onclick="myFunction(this);">
-  </div>
-
+<div class = "button">
+  <a href={%url 'simple_upload'%} class="btn btn-default">UploadImage
+  <i class="fa fa-plus my-float"></i>
+  </a>
 
 </div>
 
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
+
+
+{% for pic in pic_images reversed%}
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank">
+      <img src="{{ pic.url}}" class= "img-circle" alt="Cinque Terre" width="600" height="400">
+      <form method='post' action="{%url 'dele' pic.pk%}">
+        {%csrf_token%}
+        <button type='submit'>Delete</button>
+        </form>
+    </a>
+    <div class="desc">Amazing you have uploaded your Images</div>
+  </div>
 </div>
 
-<script>
-function myFunction(imgs) {
-  var expandImg = document.getElementById("expandedImg");
-  var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
-  expandImg.parentElement.style.display = "block";
-}
-</script>
+{%endfor%}
+
+
+
 
 </body>
-
 {% endblock content %}

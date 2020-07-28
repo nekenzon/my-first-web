@@ -1,0 +1,105 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <body>
+        <table border="1" cellspacing="0" align="center" >
+            <tr>
+                <td width="30">Objective Job</td>
+                <td colspan='6'>Django Web Designer</td>
+            </tr>
+            <tr>
+                <td colspan='7' align="center" bgcolor="#c7c4c4" height="50">Basic Information</td>
+            </tr>
+            <tr>
+                <td width="80" height="30" align="center">Name</td>
+                <td width="80" align="center">QIHONGLIANG</td>
+                <td width="80" align="center">Sex</td>
+                <td width="80" align="center">Male</td>
+                <td width="80" align="center">Nation</td>
+                <td width="80" align="center">Chinese</td>
+                <td width="110" align="center"></td>
+            </tr>
+
+            <tr>
+                <td width="80" align="center">Date-Of-Birth</td>
+                <td width="80" align="center">1998-11-29</td>
+                <td width="80" align="center">Religion</td>
+                <td width="80" align="center">No-Religion</td>
+                <td width="80" align="center">Marriage</td>
+                <td width="80" align="center">Married</td>
+                <td width="80" align="center"></td>
+            </tr>
+            <tr>
+                <td align="center">Hometown</td>
+                <td align="center">GuangDong</td>
+                <td align="center">Current-address</td>
+                <td align="center">Birmingham</td>
+                <td align="center">Education</td>
+                <td align="center">Undergraduate</td>
+                <td align="center"></td>
+            </tr>
+
+            <tr>
+                <td align="center">Graduated-school</td>
+                <td align="center" colspan="2">University-Of-Birmingham</td>
+                <td align="center">Major</td>
+                <td align="center" colspan="2">Meng-SoftwareEnginnering/Computer-Science</td>
+                <td align="center"></td>
+            </tr>
+
+            <tr>
+                <td align="center">Email</td>
+                <td align="center" colspan="2">nekenzon@gmail.com/qxl749@student.bham.ac.uk</td>
+                <td align="center">Contacted-Number</td>
+                <td align="center" colspan="3">07465644363</td>
+
+            </tr>
+
+
+            <tr>
+                <td colspan="7" align="center" bgcolor="#c7c4c4" height="50" >Education-Experience</td>
+            </tr>
+            <tr>
+                <td width="150" align="center">start_time</td>
+                <td width="150" align="center"> graduation-school</td>
+                <td width="150" colspan="5"  align="center">professional</td>
+            </tr>
+            {% for item in graduation_list %}
+                <tr class="graduation">
+                    <td height="30">{{ item.start_time }}</td>
+                    <td height="30">{{ item.school }}</td>
+                    <td height="30" colspan="5">{{ item.professional }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="7" align="center" bgcolor="#c7c4c4" height="50">Work-Experience</td>
+            </tr>
+            <tr>
+                <td  align="center">start_time</td>
+                <td  align="center">company</td>
+                <td  colspan="5"  align="center">About-Work</td>
+            </tr>
+
+            {% for item in experience_list %}
+            <tr class="experience">
+                <td height="30"  align="center">{{ item.start_time }}</td>
+                <td height="30" height="30">{{ item.company }}</td>
+                <td height="30" height="30" colspan="5">{{ item.work_content }}</td>
+            </tr>
+            {% endfor %}
+
+
+            <tr height="100" class="aihao">
+                <td align="center">Skill-And-Hobbit</td>
+                <td colspan="6">#Stay Up All night for programming #Test Open-Source Game or App #Develop Game</td>
+            </tr>
+
+            <tr height="100" class="pingjia">
+                <td  align="center">Self-Evaluation</td>
+                <td colspan="6">Postive and love to social</td>
+            </tr>
+
+        </table>
+
+    </body>
+  {% endblock content %}
