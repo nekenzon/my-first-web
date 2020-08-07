@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -13,6 +14,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}" charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
@@ -25,7 +28,7 @@
     </head>
     <body style = "background-color:#f5f3ed;">
       {% with request.resolver_match.url_name as url_name %}
-      <div class="topnav" id="navBar" onclick="pagebar()">
+      <div class="topnav" id="navBar" onclick="pagebar()" >
         <a id = 'homeN' class="{% if url_name == 'index' %}active{% endif %}" href="{% url 'index' %}" >Home</a>
         <a id = 'postN' class="{% if url_name == 'post_list' %}active{% endif %}" href="{% url 'post_list' %}">Post</a>
         <a id = 'albumN' class="{% if url_name == 'album' %}active{% endif %}" href="{% url 'album' %}">Album</a>
@@ -35,15 +38,15 @@
       </div>
       {% endwith %}
 
+
+
       <div id="fb-root"></div>
       <div class="page-header" style="background-color:grey">
       {% if user.is_authenticated %}
-          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-          <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-          <p class="top-menu" style="font-size:18pt">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">NewPost</span></a>
+          <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit">Draft</span></a>
+          <p class="top-menu" style="font-size:18pt">Welcome {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
       {% else %}
-          <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
-          <a href="{% url 'post_register' %}" class="top-menu"><span class="glyphicon glyphicon-user"></span></a>
       {% endif %}
       <h1><a href="/" >QIHONGLIANG BLOG</a></h1>
      </div>

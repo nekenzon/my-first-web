@@ -42,7 +42,7 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 20pt;
     margin-right: 20px;
 }
 
@@ -124,7 +124,7 @@ div.home{
 
 
  .container2{
-     position: fixed;
+     position: absolute;
      left: 20%;
      top: 50%;
      transform: translate(-20%,-50%);
@@ -165,7 +165,7 @@ div.home{
  }
 
 .container3{
-     position: fixed;
+     position: absolute;
      right: 15%;
      top: 50%;
      transform: translate(-20%,-50%);

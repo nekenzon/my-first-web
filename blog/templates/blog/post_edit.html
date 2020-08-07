@@ -27,6 +27,8 @@
                 <label class="w3-text-brown">Text</label><br>
                 <textarea rows="4" cols="50" name="text" class="w3-input w3-border w3-sand">{{ form.instance.text }}</textarea><br>
                 <br>
+                <a class="container w3-opacity" href="{%url 'error' %}">Reminder: In the EDIT MODE , If you are not the one who create this post, the save function will not work when you try to edit this post</a>
+                <br>
                 <button type="submit" class="btn btn-success w3-right">Save</button>
                 <br>
 

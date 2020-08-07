@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<body>
+<h2>For Security reason , You can only edit posts that you created</h2>
+<br>
+<a class="container w3-opacity" href="{%url 'post_list'%}">Return to Post List</a>
+</body>
+{% endblock content %}

@@ -67,20 +67,21 @@
   <div class=home>
   <p class = "home"> Welcome to Qihong's blog!</p>
 
+
  <div class="container2">
-    <h1>LOGIN</h1>
+    <h1>ADMIN LOGIN</h1>
      <form method="post" action="{% url 'login_user' %}">
        {% csrf_token %}
-         <label>Username</label><br>
-         <input type="text" name="username"><br>
-         <label>Password</label><br>
-         <input type="password" name="password"><br>
+         <label for="username">Username</label><br>
+         <input type="text" name="username" class="form-control"><br>
+         <label for="password">Password</label><br>
+         <input type="password" name="password" class="form-control"><br>
          <button type="submit">Log in</button>
      </form>
  </div>
 
  <div class="container3">
-    <h1>Dones't have an account?</h1>
+    <h1>Register For an Admin Account</h1>
      <form method="post" action="{% url 'post_register' %}">
        {% csrf_token %}
          <button type="submit" >Register</button>
@@ -88,5 +89,7 @@
  </div>
  {% endif %}
 </div>
+
+
 
 {% endblock content %}

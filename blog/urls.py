@@ -27,4 +27,5 @@ urlpatterns = [
     path('post_search',views.searchposts,name='post_search'),
     path('pics/<int:pk>/dele',views.dele,name='dele'),
     path('cv', views.cv, name='cv'),
+    path('error', views.error, name='error'),
 ]

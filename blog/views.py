@@ -36,7 +36,7 @@ def searchposts(request):
 
 
 
-
+@login_required
 def simple_upload(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST' and request.FILES['myfile']:
@@ -51,6 +51,7 @@ def simple_upload(request, pk):
         })
     return render(request, 'blog/simple_upload.html')
 
+@login_required
 def simple_upload2(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
@@ -67,7 +68,6 @@ def simple_upload2(request):
 
 
 def login_user(request):
-    print("?????")
     logout(request)
     username = password = ''
     if request.POST:
@@ -129,10 +129,10 @@ def post_edit(request, pk):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
-
+            #Can not modify the username unless you are the one create
             post.save()
             return redirect('post_detail', pk=post.pk)
+
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
@@ -186,6 +186,10 @@ def index(req):
 def index(request):
     context = {"index_page": "active"} # new info here
     return render(request, 'blog/index.html', context)
+
+def error(request):
+    context = {"error_page": "active"} # new info here
+    return render(request, 'blog/error.html', context)
 
 def dele(request, pk):
     pics=get_object_or_404(AlbumPic, pk=pk)
