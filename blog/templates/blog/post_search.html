@@ -13,21 +13,21 @@ Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search
 {% if submitbutton == 'Search' and request.GET.q != '' %}
 {% if results %}
 <h1>Results for <b>{{ request.GET.q }}</b></h1>
-<br/><br/>
+
 
 {% for result in results %}
+<div class="w3-container w3-white w3-margin w3-padding-large post">
+  <div class="w3-center">
+    <h3 style="color:#6699ff"><a href="{% url 'post_detail' pk=result.pk %}"">{{result.title}}</a></h3>
+    <h5><span class="w3-opacity">{{result.text}}</span></h5>
+<div>
+  <div>
 
-{{result.title}}
-<br/>
-
-{{result.text}}
-<br/>
 
 {% endfor %}
 {% else %}
 No search results for this query
 {% endif %}
 {% endif %}
-
 
 {% endblock %}

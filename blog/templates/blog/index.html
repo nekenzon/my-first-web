@@ -1,8 +1,6 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-
-  {% if user.is_authenticated %}
 <div style="background-color:black">
   <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -57,39 +55,10 @@
       <div class="container">
         <h1>This Blog is my personal site</h1>
         </div>
+<br>
+<div class="container">
+  <h1>This Blog is my personal site</h1>
+  </div>
 </div>
-
-
-
-
-
-  {% else %}
-  <div class=home>
-  <p class = "home"> Welcome to Qihong's blog!</p>
-
-
- <div class="container2">
-    <h1>ADMIN LOGIN</h1>
-     <form method="post" action="{% url 'login_user' %}">
-       {% csrf_token %}
-         <label for="username">Username</label><br>
-         <input type="text" name="username" class="form-control"><br>
-         <label for="password">Password</label><br>
-         <input type="password" name="password" class="form-control"><br>
-         <button type="submit">Log in</button>
-     </form>
- </div>
-
- <div class="container3">
-    <h1>Register For an Admin Account</h1>
-     <form method="post" action="{% url 'post_register' %}">
-       {% csrf_token %}
-         <button type="submit" >Register</button>
-     </form>
- </div>
- {% endif %}
-</div>
-
-
 
 {% endblock content %}

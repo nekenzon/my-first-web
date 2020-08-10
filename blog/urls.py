@@ -28,4 +28,5 @@ urlpatterns = [
     path('pics/<int:pk>/dele',views.dele,name='dele'),
     path('cv', views.cv, name='cv'),
     path('error', views.error, name='error'),
+    path('admin',views.admin,name='admin'),
 ]

@@ -23,8 +23,8 @@ def searchposts(request):
 
             results= Post.objects.filter(lookups).distinct()
 
-            context={'results': results,
-                     'submitbutton': submitbutton}
+            context={"results": results,
+                     "submitbutton": submitbutton}
 
             return render(request, 'blog/post_search.html', context)
 
@@ -125,7 +125,7 @@ def post_new(request):
 @login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
+    if request.method == "POST" and request.user == post.author:
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
@@ -209,6 +209,12 @@ def album(request):
 def about(request):
     context = {"about_page": "active"} # new info here
     return render(request, 'blog/about.html', context)
+
+
+def admin(request):
+    context = {"admin_page": "active"}
+    return render(request,'blog/admin.html',context)
+
 
 def cv(request):
     graduation_list = Graduation.objects.all()

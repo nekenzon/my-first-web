@@ -22,12 +22,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
         h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
-        body {font-family: "Open Sans"}
+        body {font-family: "Open Sans";}
       </style>
 
     </head>
     <body style = "background-color:#f5f3ed;">
       {% with request.resolver_match.url_name as url_name %}
+
       <div class="topnav" id="navBar" onclick="pagebar()" >
         <a id = 'homeN' class="{% if url_name == 'index' %}active{% endif %}" href="{% url 'index' %}" >Home</a>
         <a id = 'postN' class="{% if url_name == 'post_list' %}active{% endif %}" href="{% url 'post_list' %}">Post</a>
@@ -35,6 +36,9 @@
         <a id = 'aboutN' class="{% if url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
         <a id = 'searchN' class="{% if url_name == 'searchposts' %}active{% endif %}" href="{% url 'post_search' %}">Search</a>
         <a id = 'cvN' class="{% if url_name == 'cv' %}active{% endif %}" href="{% url 'cv' %}">CV</a>
+        {%if not user.is_authenticated%}
+        <a id = 'adminN' class="{% if url_name == 'admin' %}active{% endif %}" href="{% url 'admin' %}">Admin Login</a>
+        {%endif%}
       </div>
       {% endwith %}
 
