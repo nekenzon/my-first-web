@@ -41,6 +41,7 @@ class Image(models.Model):
 
 class AlbumPic(models.Model):
     url = models.CharField(max_length=200)
+    
 
 
 

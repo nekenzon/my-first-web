@@ -4,7 +4,9 @@
         <title>QIHONGLIANG BLOG</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -49,11 +51,12 @@
       {% if user.is_authenticated %}
           <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">NewPost</span></a>
           <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit">Draft</span></a>
-          <p class="top-menu" style="font-size:18pt">Welcome {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+          <p class="top-menu" style="font-size:20pt">Welcome {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
       {% else %}
       {% endif %}
-      <h1><a href="/" >QIHONGLIANG BLOG</a></h1>
+      <h2 style="color:white;"><i class="fas fa-cloud"></i><a >QIHONGLIANG BLOG </a></h2>
      </div>
+
     <!-- <div class="content container">
         <div class="row">
             <div class="col-md-8">

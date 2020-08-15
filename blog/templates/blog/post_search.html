@@ -1,33 +1,85 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h1>Search Page</h1>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+}
 
-<br/>
-<form action="{% url 'post_search' %}" method="GET" value="{{request.GET.q}}">
-Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search posts"/>
-<input type="submit" name="submit" value="Search"/>
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+</style>
+</head>
+<body>
+
+<div style="margin-top:150px;">
+<h1 style="text-align:center;">Search </h1>
+
+<form class="example" form action="{% url 'post_search' %}" method="GET" value="{{request.GET.q}}" style="margin:auto;max-width:700px">
+  <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search posts"/>
+  <button type="submit" type="submit" name="submit" value="Search">Search</button>
 </form>
 
 
 {% if submitbutton == 'Search' and request.GET.q != '' %}
 {% if results %}
-<h1>Results for <b>{{ request.GET.q }}</b></h1>
+<h2 style="text-align:center">Results for <b>{{ request.GET.q }}</b></h2>
 
 
 {% for result in results %}
-<div class="w3-container w3-white w3-margin w3-padding-large post">
+<div class="jumbotron">
   <div class="w3-center">
     <h3 style="color:#6699ff"><a href="{% url 'post_detail' pk=result.pk %}"">{{result.title}}</a></h3>
     <h5><span class="w3-opacity">{{result.text}}</span></h5>
-<div>
-  <div>
+    <br>
+</div>
+  </div>
 
 
 {% endfor %}
 {% else %}
-No search results for this query
-{% endif %}
+<br>
+<br>
+<p style="text-align:center">No search results for this query,Please type it again.</p>
 {% endif %}
 
+{% endif %}
+</div>
+</body>
 {% endblock %}

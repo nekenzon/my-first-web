@@ -13,6 +13,15 @@ html {
   box-sizing: border-box;
 }
 
+
+h2, h4 {
+  padding: 0 30px;
+}
+
+p{
+  padding: 0 15px;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -36,9 +45,32 @@ html {
   color: white;
 }
 
-.container {
-  padding: 0 16px;
+.animatied-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../static/img/view19.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
+
+.animatied-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+
+.faq {
+  padding: 0 800px;
+  width: 40%;
+}
+
+
 
 .container::after, .row::after {
   content: "";
@@ -48,6 +80,7 @@ html {
 
 .title {
   color: grey;
+
 }
 
 
@@ -61,31 +94,275 @@ html {
     display: block;
   }
 }
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+
+.fa-dribbble {
+  background: #ea4c89;
+  color: white;
+}
+
+.fa-vimeo {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+}
+
+.fa-vine {
+  background: #00b489;
+  color: white;
+}
+
+.fa-foursquare {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-stumbleupon {
+  background: #eb4924;
+  color: white;
+}
+
+.fa-flickr {
+  background: #f40083;
+  color: white;
+}
+
+.fa-yahoo {
+  background: #430297;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+.fa-rss {
+  background: #ff6600;
+  color: white;
+}
+
+.split {
+   width: 50%;
+   position: absolute;
+   z-index: 1;
+   top: 460;
+   overflow-x: hidden;
+   padding-top: 20px;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right:35;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+
 </style>
 </head>
 <body>
 
 
 
-<div class="about-section">
-  <h1>About Me Page</h1>
+<div class="animatied-image">
+  <div class="animatied-text">
+  <h1 style="font-size:55px">About Me Page</h1>
   <p>This page is about me and you will know about what I am.</p>
   <p>Contact details or further cooperation please scroll down.</p>
+  </div>
 </div>
 
 
-  <div class="container">
-    <h2>Stretched Link in Card</h2>
-    <p>Add the .stretched-link class to a link inside the card, and it will make the whole card clickable (the card will act as a link):</p>
+  <div class="split left">
+      <h2>QIHONG LIANG</h2>
+      <p>This Card is My Information card</p>
     <div class="card" style="width:400px">
       <img class="card-img-top" src="../../static/img/qihongliang.jpg" alt="Card image" style="width:100%">
       <div class="card-body">
-        <h4 class="card-title">QIHONG LIANG</h4>
+        <h4 >QIHONG LIANG</h4>
         <p class="card-text">SoftwareEnginnering year 3 student , Contact:nekenzon@gmail.com</p>
-        <a href="#" class="btn btn-primary stretched-link">See Profile</a>
+          <a href="{%url 'cv' %}" class="btn btn-primary stretched-link">See Resume</a>
+      </div>
+    </div>
+    <div>
+      <h2>Contact Via Social Media</h2>
+      <a href="http://www.facebook.com" class="fa fa-facebook"></a>
+      <a href="http://www.twitter.com" class="fa fa-twitter"></a>
+      <a href="http://www.google.com" class="fa fa-google"></a>
+      <a href="http://www.linkedin.com" class="fa fa-linkedin"></a>
+      <a href="http://www.youtube.com" class="fa fa-youtube"></a>
+      <a href="http://www.instagram.com" class="fa fa-instagram"></a>
+      <a href="http://www.yahoo.com" class="fa fa-yahoo"></a>
+      </div>
+
+  </div>
+
+  <div class="split right">
+    <div class="container">
+    <h2>FAQ Section</h2>
+    <p><strong>Note:</strong> The <strong>FAQsection</strong> is trying to get user a clear understanding about the blog, and figure out how to use the website as an admin and as a normal vistors.</p>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseOne">
+            Stucking on Register and Login ? (<strong>Here</strong> is How to Use)
+          </a>
+        </div>
+        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+          <div class="card-body">
+            <p>As a vistor, you don't need to login if you just normally browse my blogs and albumns. However, if you want to know how my website work, you need to register as an administrator, you will need to go to <strong>AdminLogin</strong> page and register</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+          Having Problems With Editing the Posts ? (Admin Mode)
+        </a>
+        </div>
+        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+          <p>As a Admin, You can edit your posts whenever you want. The change will be saved when you finished your edition, you can delete this post if you are unhappy with your posts.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+            Problems With Uploading your pictures? (Admin Mode)
+          </a>
+        </div>
+        <div id="collapseThree" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            Admin can manage the albumn , you can upload some new pictures. Or delete the pictures you don't want . Easily Control in Albumn Page If you are an admin.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+            Problems with Comment the posts? (User mode and Admin Mode)
+          </a>
+        </div>
+        <div id="collapseFour" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            As a user , you can leave a comment in the posts you liked. You just need to type you name in the comment form and then can leave your comment, these comments can be seen by everyone. As a Admin, you can manage the comment ,such as deleting the comments you dont want to see.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+            Like system in posts
+          </a>
+        </div>
+        <div id="collapseFive" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            There is also a like system in the posts list page. As a User or Admin, you can press liked button if you like the posts, this is similar as most of social media like instagram, youtube.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">
+            Admin Security System
+          </a>
+        </div>
+        <div id="collapseSix" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            The Admin Security System is currently weak, since it is easily be a admin. Don't need any validation, but I am Strugling on the security of my whole web. Preventing the attackers and data lost.
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
 
 
 

@@ -1,8 +1,10 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <body>
-        <table border="1" cellspacing="0" align="center" class="container">
+<body>
+<div class="container mt-3">
+        <table border="1" cellspacing="0" align="center" class="table table-bordered">
+          <tbody id="myTable">
             <tr>
                 <td width="30">Objective Job</td>
                 <td colspan='6'>Django Web Designer</td>
@@ -98,8 +100,11 @@
                 <td  align="center">Self-Evaluation</td>
                 <td colspan="6">Postive and love to social</td>
             </tr>
+            </tbody>
 
         </table>
 
+
+    </div>
     </body>
   {% endblock content %}

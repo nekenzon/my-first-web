@@ -6,6 +6,8 @@ from django.test import TestCase
 from django.test import Client
 from bs4 import BeautifulSoup
 from .models import Graduation, Experience
+from selenium.webdriver.common.keys import Keys
+import time
 
 class Myunittest(TestCase):
 
@@ -112,7 +114,7 @@ class Myunittest(TestCase):
         temp = self.bs.select("table > tr ")[1].select("td")[0]
         self.assertEqual("Basic Information", temp.text)
 
-class NewVisitorTest(unittest.TestCase):
+class SeleniumTest(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -120,12 +122,17 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_can_start_a_list_and_retrieve_it_later(self):
-        # Edith has heard about a cool new online to-do app. She goes
-        # to check out its cvpage
+    def test_can_get_to_the_url_correct(self):
+
+        #functional testing
         self.browser.get('http://localhost:8000/cv')
-        # She notices the page title and header mention to-do lists
+
+        #Title testing
         self.assertIn('QIHONGLIANG BLOG', self.browser.title)
+
+        #head element testing
+        head = self.browser.find_element_by_tag_name('td').text
+        self.assertEqual('Objective Job',head)
 
 
 

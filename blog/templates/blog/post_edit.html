@@ -3,12 +3,6 @@
 {% block content %}
 <br>
 <div class="content container">
-  {%if form.instance.pk  %}
-  <a href="{% url 'simple_upload2' pk=form.instance.pk %}" class="top-menu"><span class="glyphicon glyphicon-upload w3-black"></span></a>
-  {%endif%}
-
-
-
 
     <div class="row">
         <div class="col-md-8">
@@ -27,14 +21,16 @@
                 <label class="w3-text-brown">Text</label><br>
                 <textarea rows="4" cols="50" name="text" class="w3-input w3-border w3-sand">{{ form.instance.text }}</textarea><br>
                 <br>
-                <a class="container w3-opacity" href="{%url 'error' %}">Reminder: In the EDIT MODE , If you are not the one who create this post, the save function will not work when you try to edit this post</a>
+                <a class="container w3-opacity" href="{%url 'error' %}">Reminder: In the EDIT MODE, Admin can only modify the posts they created, More Info Click me</a>
                 <br>
-                <button type="submit" class="btn btn-success w3-right">Save</button>
-                <br>
+                <button type="submit" class="btn btn-default w3-right">Save</button>
+                {%if form.instance.pk  %}
+                <a href="{% url 'simple_upload2' pk=form.instance.pk %}" class="top-menu"><span class="glyphicon glyphicon-upload btn btn-default">Add Picture</span></a>
+                {%endif%}
 
 
 
-                <p><a href="{% url 'index' %}">Return to home</a></p>
+                <p><a href="{% url 'index' %}"><span class="btn btn-default">Return to home</span></a></p>
               </form>
               <br>
             </div>
