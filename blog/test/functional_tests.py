@@ -1,7 +1,7 @@
 from selenium import webdriver
 import unittest
 
-class NewVisitorTest(unittest.TestCase):
+class SeleniumTest(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -9,12 +9,18 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_can_start_a_list_and_retrieve_it_later(self):
-        # Edith has heard about a cool new online to-do app. She goes
-        # to check out its homepage
-        self.browser.get('http://localhost:8000')
-        # She notices the page title and header mention to-do lists
+    def test_can_get_to_the_url_correct(self):
+
+        #functional testing
+        self.browser.get('http://localhost:8000/cv')
+
+        #Title testing
         self.assertIn('QIHONGLIANG BLOG', self.browser.title)
+
+        #head element testing
+        head = self.browser.find_element_by_tag_name('td').text
+        self.assertEqual('Objective Job',head)
+
 
 
 

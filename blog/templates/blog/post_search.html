@@ -59,7 +59,8 @@ form.example::after {
 
 {% if submitbutton == 'Search' and request.GET.q != '' %}
 {% if results %}
-<h2 style="text-align:center">Results for <b>{{ request.GET.q }}</b></h2>
+<br>
+<h2 style="text-align:center">Results for <b>{{ request.GET.q }}</b><br><span class="spinner-border"></span></h2>
 
 
 {% for result in results %}
