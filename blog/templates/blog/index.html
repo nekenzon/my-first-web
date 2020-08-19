@@ -2,6 +2,7 @@
 
 {% block content %}
 <style>
+
 .bgimg {
   background-image: url('/../../static/img/view5.jpg');
   height: 100%;
@@ -26,11 +27,22 @@ hr {
   margin: auto;
   width: 40%;
 }
+
+
+        .footer {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: red;
+          color: white;
+          text-align: center;
+        }
 </style>
 
 
-<div style="background-color:black">
-  <div class="container">
+<div class = "w3-container" style="background-color:black">
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -78,16 +90,12 @@ hr {
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </div>
 
-      <div class="container">
-        <h3 style="color:white">This Blog is my personal site</h3>
-        </div>
-        <div class="container">
 
-          <div class="jumbotron jumbotron-fluid">
+          <div class="w3-container jumbotron jumbotron-fluid" style="text-align:center">
             <div class="container">
               <h1>University of Birmingham Student</h1>
+              <h2>QIHONG LIANG</h2>
               <p>2017:-> First Time To University of Birmingham -- Fantasty Year 1 Experience.--Friends</p>
               <p>2018:-> Having a great time in Birmingham. Bullring, Selfridge, ChinaTown. Happy Lifestyle </p>
               <p>2019:-> Year 2 start. Stressful -- Strugling -- Studying --  Getting great mark</p>
@@ -95,7 +103,7 @@ hr {
             </div>
           </div>
 
-          <div class="container">
+          <div class="w3-container">
             <h2 style="color:white">Year3 In the University of Birmingham</h2>
             <h5 style="color:white">Current State: 75% Loading For University Life</h5>
             <div class="progress">
@@ -110,7 +118,9 @@ hr {
       <p id="demo" style="font-size:30px"></p>
     </div>
   </div>
-<br>
+</div>
+
+
 
 <script>
 // Set the date we're counting down to
@@ -142,5 +152,26 @@ var countdownfunction = setInterval(function() {
   }
 }, 1000);
 </script>
+
+<footer class="w3-dark-grey">
+      <div class="container">
+        <divstyle="text-align:center">
+          <div style="text-align:center">
+            <h3>About</h3>
+            <br>
+            <p class="text-justify" style="font-size:13px">nekenzon.pythonanywhere.com <i>WANT TO BE THE BEST </i> I am doing this website to let vistors can see my daily posts and what<strong> my lifestyle </strong>will be like.I want to share my life with you. I will share my life via posts when I got something good in my life. Follow me , Like and Comment If you do like my posts. Many Thanks. QIHONG LIANG</p>
+          </div>
+
+        </div>
+        <hr>
+      <div class="container">
+
+          <div style="text-align:center;">
+            <p style="text-align:center;">Copyright &copy; 2020 All Rights Reserved by
+         <a href="#">QIHONG LIANG</a>.
+            </p>
+          </div>
+        </div>
+</footer>
 
 {% endblock content %}
