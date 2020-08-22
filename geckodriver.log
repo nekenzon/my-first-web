@@ -325,3 +325,32 @@ console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Err
 1597775621505	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: http://localhost:8000/cv, line 161: TypeError: document.getElementById(...) is null
 1597775622343	Marionette	INFO	Stopped listening on port 64261
+1598107060424	geckodriver	INFO	Listening on 127.0.0.1:53634
+1598107060447	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1d/g8chbf091f1fkvjm54sjdmwr0000gn/T/rust_mozprofilevaNgGZ"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1598107063012	Marionette	INFO	Listening on port 53643
+1598107063103	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598107063205	Marionette	INFO	Stopped listening on port 53643
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1598107099458	geckodriver	INFO	Listening on 127.0.0.1:53721
+1598107099466	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1d/g8chbf091f1fkvjm54sjdmwr0000gn/T/rust_mozprofile3sGQuu"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1598107101325	Marionette	INFO	Listening on port 53730
+1598107101404	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8000/cv, line 161: TypeError: document.getElementById(...) is null
+1598107103028	Marionette	INFO	Stopped listening on port 53730

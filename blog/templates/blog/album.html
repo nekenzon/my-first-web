@@ -98,7 +98,7 @@ div.desc {
 
 
 <div class = "button">
-  <a href="{%url 'simple_upload'%}" class="btn btn-primary">UploadImage
+  <a href="{%url 'simple_upload'%}" class="btn" style="background-color:black;color:white;">UploadImage
   <i class="fa fa-plus my-float"></i>
   </a>
 
@@ -115,7 +115,7 @@ div.desc {
       <form method='post' action="{%url 'dele' pic.pk%}">
         {%csrf_token%}
         {%if user.is_authenticated%}
-        <button class="btn-primary" type='submit'>Delete</button>
+        <button class="btn" style="background-color:black;color:white;" type='submit'>Delete</button>
         {%endif%}
         </form>
     </a>
